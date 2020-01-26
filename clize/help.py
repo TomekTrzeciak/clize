@@ -29,9 +29,9 @@ import itertools
 import inspect
 import re
 
-import od
 import attr
 import six
+from collections import OrderedDict
 from docutils.frontend import OptionParser
 from docutils.parsers.rst import Parser
 from docutils.utils import new_document
@@ -786,7 +786,7 @@ class HelpForSubcommands(object):
             documented.
         """
         usages = cls._get_usages(subject.signature.alternate, owner.cmds.items())
-        subcommands = od(
+        subcommands = OrderedDict(
             (names, cls._get_description(command))
             for names, command in owner.cmds.items()
         )

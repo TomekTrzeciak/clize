@@ -20,7 +20,6 @@ setup(
         'six',
         'sigtools >= 2.0',
         'attrs>=19.1.0,<20',
-        'od',
         'docutils',
     ],
     tests_require=[
